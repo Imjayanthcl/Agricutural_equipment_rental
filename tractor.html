@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tractor Booking Form</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="tractor.png" alt="Tractor Image">
+        <h1>Tractor Booking</h1>
+        <p>Book the best tractor for your farming needs.</p>
+    </header>
+
+    <form id="bookingForm" action="tractor.php" method="post">    
+        <label for="farmerName">Farmer's Name:</label>
+        <input type="text" id="farmerName" name="farmerName" required>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="totalHours">Total Hours:</label>
+        <input type="number" id="totalHours" name="totalHours" min="1" required>
+
+        <label for="bookingStartDate">Booking Start Date:</label>
+        <input type="date" id="bookingStartDate" name="bookingStartDate" required>
+
+        <label for="bookingStartTime">Booking Start Time:</label>
+        <input type="time" id="bookingStartTime" name="bookingStartTime" required>
+
+        <label for="bookingEndDate">Booking End Date:</label>
+        <input type="date" id="bookingEndDate" name="bookingEndDate" required>
+
+        <label for="bookingEndTime">Booking End Time:</label>
+        <input type="time" id="bookingEndTime" name="bookingEndTime" required>
+
+        <!-- Additional hidden fields for automatic calculation -->
+        <label for="totalPrice">Total Price:</label>
+        <input type="number" id="totalPrice" name="totalPrice" disabled required>
+
+        <button type="button" >Calculate Price</button>
+        <button type="submit">Submit Booking</button>
+    </form>
+
+    <script>
+        // Set minimum date for booking start and end date
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('bookingStartDate').min = today;
+        document.getElementById('bookingEndDate').min = today;
+    </script>
+</body>
+</html>

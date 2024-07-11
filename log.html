@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI RENTAL LOGIN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set a backroad image background */
+        body {
+            background: url('login.png') center/cover no-repeat;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style the login container */
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(4, 46, 58, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(41, 36, 36, 0.2);
+            text-align: center;
+        }
+
+        /* Style the login form */
+        .login-form {
+            padding: 20px;
+        }
+
+        /* Style form elements */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        /* Style the submit button (login) */
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #87CEFA; /* Light Blue color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add hover effect to the submit button */
+        .login-form input[type="submit"]:hover {
+            background-color: #5F9EA0; /* Darker shade of Light Blue on hover */
+        }
+        .login-button {
+            background-color: #716def; /* Orange color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default link underline */
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .login-button:hover {
+            background-color: #3009b1; /* Darker shade of orange on hover */
+        }
+
+        /* Style the signup button */
+        .signup-button {
+            background-color: #ff7f50; /* Orange color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default link underline */
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .signup-button:hover {
+            background-color: #ff6347; /* Darker shade of orange on hover */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        .back-to-home {
+            margin-top: 40px;
+            text-align: right;
+        }
+
+        .back-to-home a {
+            color: #fff;
+            text-decoration: none;
+            background: #007bff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-home a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login For Agri Rent</h2>
+        <!-- Your HTML form -->
+<form method="post" action="log.php">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button class="login-button" type="submit">Login</button>
+</form>
+
+        <h4>For New Users?</h4>
+        <a href="sig.html" class="signup-button">SIGN UP</a>
+    </div>
+
+    <script>
+        function done() {
+            alert("Login Successful");
+        }
+    </script>
+</body>
+</html>

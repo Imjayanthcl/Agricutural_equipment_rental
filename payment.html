@@ -1,0 +1,124 @@
+    <!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+         body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        /* Your existing CSS styles here */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Booking Confirmation</h1>
+        <p>You can pay online if you want, otherwise, you can pay cash in the office.</p>
+    </header>
+
+    <form id="confirmationForm" action="payment.php" method="post" enctype="multipart/form-data" onsubmit="showPopup(); return false;">
+
+        <img src="qrcode.jpg" alt="QR Code">
+        <p>Payment Date: <input type="date" id="paymentDate" name="paymentDate"  required></p>
+        
+        <p>Payment Time: <input type="time" id="paymentTime" name="paymentTime"  required></p>
+        <p>Transaction ID: <input type="text" id="transactionId" name="transactionId" required></p>
+    
+        <button type="submit">Confirm and Pay</button>
+    </form>
+
+    <!-- Popup content -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Payment Successful</h2>
+        <p>Thank you for your payment!</p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
+
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('paymentDate').min = today;
+        function showPopup() {
+            // Show overlay and popup
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            // Hide overlay and popup
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tractor Booking Form</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="harvester.jpg" alt="Tractor Image">
+        <h1>Harvester Booking</h1>
+        <p>Book the best harvester for your farming needs.</p>
+    </header>
+
+    <form id="bookingForm" onsubmit="return redirectToPaymentPage();">
+        <label for="farmerName">Farmer's Name:</label>
+        <input type="text" id="farmerName" name="farmerName" required>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="totalHours">Total Hours:</label>
+        <input type="number" id="totalHours" name="totalHours" min="1" required>
+
+        <!-- Additional hidden fields for automatic calculation -->
+        <input type="hidden" id="currentDateTime" name="currentDateTime" value="">
+
+        <label for="totalPrice">Total Price:</label>
+        <input type="text" id="totalPrice" name="totalPrice" readonly>
+
+        <button type="button" onclick="calculatePrice()">Calculate Price</button>
+        <button type="submit">Submit Booking</button>
+        
+        
+    </form>
+
+    <script>
+        function calculatePrice() {
+            // Fetch current date and time
+            const currentDateTime = new Date();
+            document.getElementById('currentDateTime').value = currentDateTime.toLocaleString();
+    
+            // Fetch total hours from the form
+            const totalHours = parseInt(document.getElementById('totalHours').value, 10);
+    
+            // Calculate total price (Replace this with your own pricing logic)
+            const pricePerHour = 5000;
+            const totalPrice = totalHours * pricePerHour;
+    
+            // Update the total price field
+            document.getElementById('totalPrice').value = '₹' + totalPrice.toFixed(2);
+        }
+    
+        
+    function redirectToPaymentPage() {
+        // Redirect to the payment.html page
+        window.location.href = "payment.html";
+        return false; // Prevents the default form submission behavior
+    }
+    </script>
+    
+    
+</body>
+</html>

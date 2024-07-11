@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Equipment Rental</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #007bff;
+        }
+
+        .equipment-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .equipment-card {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+
+        .equipment-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .equipment-card h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .equipment-card p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .book-button {
+            float: right;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+
+        .equipment-card:hover {
+            transform: scale(1.1);
+        }
+
+        .not-available-message {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rented equipment details here.</h1>
+
+    <div class="equipment-container">
+        <div class="equipment-card" id="equipment1">
+            <img src="tractor.png" alt="Tractor Image">
+            <h2>Tractor</h2>
+            <p>Condition: Good</p>
+            <a href="renttractor.html" class="book-button">Fetch Rent Details</a>
+        </div>
+
+        <div class="equipment-container">
+            <div class="equipment-card" id="equipment1">
+                <img src="harvester.jpg" alt="Tractor Image">
+                <h2>Harvester</h2>
+                <p>Condition: Good</p>
+                <a href="harvester.html" class="book-button">Fetch Rent Details</a>
+            </div>
+        </body>
+        </html>
+        

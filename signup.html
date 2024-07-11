@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI RENTAL SIGNUP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set a backroad image background */
+        body {
+            background: url('signup.png') center/cover no-repeat;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style the signup container */
+        .signup-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(4, 46, 58, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(41, 36, 36, 0.2);
+            text-align: center;
+        }
+
+        /* Style the signup form */
+        #signup-form {
+            padding: 20px;
+        }
+
+        /* Style form elements */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        /* Style the submit button (signup) */
+        #signup-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff7f50; /* Orange color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add hover effect to the submit button */
+        #signup-form input[type="submit"]:hover {
+            background-color: #ff6347; /* Darker shade of orange on hover */
+        }
+        .signup-button {
+            background-color: #ff7f50; /* Orange color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default link underline */
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .signup-button:hover {
+            background-color: #ff6347; /* Darker shade of orange on hover */
+        }
+
+        /* Style the login button */
+        .login-button {
+            background-color: #087ec8; /* Light Blue color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default link underline */
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .login-button:hover {
+            background-color: #450be3; /* Darker shade of Light Blue on hover */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        .back-to-home {
+            margin-top: 40px;
+            text-align: right;
+        }
+
+        .back-to-home a {
+            color: #fff;
+            text-decoration: none;
+            background: #007bff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-home a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup For Agri Rent</h2>
+        <form id="signup-form" action="signup.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmpassword">Confirm Password:</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" required>
+
+            <button class="signup-button" type="submit">Signup</button>
+        </form>
+
+        <h4>Already have an account? Click here to <a href="login.html" class="login-button">Login</a></h4>
+    </div>
+    <div class="back-to-home">
+      <a href="index.html">Back to Home</a>
+  </div>
+
+    <script>
+        /* Your JavaScript code here */
+        /* document.getElementById("signup-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // You can add your signup logic here using JavaScript
+            // For demonstration purposes, we'll just show an alert
+            alert("Signup successful!");
+        });*/
+    </script>
+</body>
+</html>
